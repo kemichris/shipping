@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
 
+import routes from './routes/index.routes'
 import errorHandler from './middlewares/errorHandler'
 import notFound from './middlewares/notFound'
 
@@ -34,7 +35,6 @@ app.get("/api/health", (req, res) => {
 app.use('/api', routes);
 
 app.use(notFound);
-
 app.use(errorHandler);
 
 export default app;

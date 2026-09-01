@@ -2,9 +2,9 @@ import express from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
 
-import routes from './routes/index.routes'
-import errorHandler from './middlewares/errorHandler'
-import notFound from './middlewares/notFound'
+import routes from './routes/index.routes.js'
+import errorHandler from './middlewares/errorHandler.js'
+import notFound from './middlewares/notFound.js'
 
 const app = express()
 

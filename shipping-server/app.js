@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     res.status(200).json({
         success: true,
-        message: 'Bank API is running'
+        message: 'Shipping API is running'
     });
 });
 
@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 app.get("/api/health", (req, res) => {
     res.status(200).json({
         success: true,
-        message: "Bank API is running"
+        message: "Shipping API is running"
     });
 });
 

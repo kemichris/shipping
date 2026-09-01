@@ -1,62 +1,126 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
-const shipmentSchema = new mongoose.Schema({
-    trackingNumber: String,       // unique, human-friendly
-    referenceNumber: String,
+const shipmentSchema = new mongoose.Schema(
+  {
+    trackingNumber: {
+      type: String,
+      required: true,
+      unique: true,
+      index: true,
+    },
+
+    referenceNumber: {
+      type: String,
+      trim: true,
+    },
+
     sender: {
-        name: String,
-        phone: String,
-        email: String,
-        address: Address
+      name: {
+        type: String,
+        required: true,
+        trim: true,
+      },
+      phone: String,
+      email: String,
+      address: {
+        type: addressSchema,
+        required: true,
+      },
     },
 
     recipient: {
-        name: String,
-        phone: String,
-        email: String,
-        address: Address
+      name: {
+        type: String,
+        required: true,
+        trim: true,
+      },
+      phone: String,
+      email: String,
+      address: {
+        type: addressSchema,
+        required: true,
+      },
     },
 
     package: {
-        description: String,
-        weightKg: Number,
-        lengthCm: Number,
-        widthCm: Number,
-        heightCm: Number,
-        quantity: Number
+      type: packageSchema,
+      required: true,
     },
 
     status: {
-        type: String,
-        enum: ['pending', 'enroute', 'delivered'],
-        default: 'pending'
+      type: String,
+      enum: [
+        "pending",
+        "picked_up",
+        "in_transit",
+        "out_for_delivery",
+        "delivered",
+        "cancelled",
+        "returned",
+      ],
+      default: "pending",
+      index: true,
     },
 
     currentLocation: {
-        label: String,
-        coordinates: [Number],      // [longitude, latitude] for MongoDB GeoJSON
-        updatedAt: Date
+      label: String,
+
+      type: {
+        type: String,
+        enum: ["Point"],
+        default: "Point",
+      },
+
+      coordinates: {
+        type: [Number],
+      },
+
+      updatedAt: Date,
     },
 
     estimatedDeliveryDate: Date,
+
     deliveredAt: Date,
 
-    trackingEvents: [{
-        status: String,
-        message: String,
-        location: {
-            label: String,
-            coordinates: [Number]
+    trackingEvents: [
+      {
+        status: {
+          type: String,
+          required: true,
         },
-        occurredAt: Date,
-        updatedBy: ObjectId
-    }],
 
-    createdBy: ObjectId,
-    createdAt: Date,
-    updatedAt: Date
+        message: {
+          type: String,
+          required: true,
+        },
 
-})
+        location: {
+          label: {
+            type: String,
+            required: true,
+          },
+          coordinates: {
+            type: [Number],
+            required: true,
+          },
+        },
+
+        occurredAt: {
+          type: Date,
+          default: Date.now,
+        },
+
+        updatedBy: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "User",
+        },
+      },
+    ],
+  },
+  {
+    timestamps: true,
+  },
+);
 
 const Shipment = mongoose.model("shipment", shipmentSchema);
 

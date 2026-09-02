@@ -1,5 +1,6 @@
-import mongoose from "mongoose";
-import packageSchema from "./package.model";
+import mongoose from 'mongoose';
+import packageSchema from './package.model.js';
+import addressSchema from './address.model.js';
 
 const shipmentSchema = new mongoose.Schema(
   {

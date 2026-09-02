@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const addressSchema = new mongoose.Schema({
     label: {
@@ -6,13 +6,13 @@ const addressSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
+
     coordinates: {
         type: [Number],
         required: true
     }
-}, { _id: false });
+}, {
+    _id: false
+});
 
-
-const Address = mongoose.model('Address', addressSchema)
-
-export default Address
+export default addressSchema;

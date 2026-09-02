@@ -1,4 +1,4 @@
-// import User from '../models/user.model.js';
+import User from '../models/user.model.js';
 
 import ApiError from '../utils/apiError.utils.js';
 import { verifyAccessToken } from '../utils/jwt.utils.js';

@@ -28,6 +28,4 @@ const packageSchema = new mongoose.Schema({
     }
 }, { _id: false });
 
-const Package = mongoose.model('Package', packageSchema)
-
-export default Package
+export default packageSchema;

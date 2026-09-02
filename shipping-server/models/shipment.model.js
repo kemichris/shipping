@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import packageSchema from "./package.model";
 
 const shipmentSchema = new mongoose.Schema(
   {
@@ -8,12 +9,6 @@ const shipmentSchema = new mongoose.Schema(
       unique: true,
       index: true,
     },
-
-    referenceNumber: {
-      type: String,
-      trim: true,
-    },
-
     sender: {
       name: {
         type: String,

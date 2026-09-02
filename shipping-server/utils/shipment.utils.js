@@ -1,4 +1,4 @@
-export const generateReference = () => {
+export const generateTrackingNumber = () => {
     const prefix = 'TRC';
 
     return prefix + Math.floor(

@@ -42,6 +42,20 @@ const shipmentSchema = new mongoose.Schema(
       },
     },
 
+    shippingMode: {
+      type: String,
+      required: true,
+    },
+
+    paymentMethod: {
+      type: String,
+      required: true,
+    },
+
+    serviceMode: {
+      type: String,
+    },
+
     package: {
       type: packageSchema,
       required: true,

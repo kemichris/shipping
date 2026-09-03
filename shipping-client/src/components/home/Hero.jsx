@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { MdOutlineSupportAgent } from "react-icons/md";
+
+import {Button} from '../common/Button'
 
 import heroImg1 from "../../assets/heroImg1.jpg";
 import heroImg2 from "../../assets/heroImg2.avif";
@@ -50,6 +53,9 @@ export function Hero() {
           Join the millions getting bargain deals on shipping cars, furniture,
           freight, and more.
         </p>
+
+        <Button to='/contact' icon={<MdOutlineSupportAgent />} text='Get Started' />
+        
       </div>
     </section>
   );

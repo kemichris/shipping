@@ -50,7 +50,7 @@ export function Navbar() {
             </NavLink>
           </li>
 
-          <Button  to="/tracking" icon={<FaTruckArrowRight />} text='Track Shipment'  />
+          <Button  to="/tracking" icon={<FaTruckArrowRight size={20} />} text='Track Shipment'  />
         </ul>
 
         {/* Desktop Right */}

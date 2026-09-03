@@ -6,7 +6,7 @@ import { FaTruckArrowRight } from "react-icons/fa6";
 
 import { Button } from "../common/Button";
 
-// import { MobileMenu } from "./MobileMenu";
+import { MobileMenu } from "./MobileMenu";
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,7 +25,7 @@ export function Navbar() {
         <FaTruckArrowRight size={25} />
 
         {/* Desktop Navigation */}
-        <ul className="flex gap-4 items-center">
+        <ul className="hidden md:flex gap-4 md:items-center ">
           <li>
             <NavLink to="/" className={navLinkClass}>
               Home
@@ -62,7 +62,7 @@ export function Navbar() {
       </nav>
 
       {/* Mobile Menu */}
-      {/* <MobileMenu open={menuOpen} onClose={closeMenu} /> */}
+      <MobileMenu open={menuOpen} onClose={closeMenu} />
     </>
   );
 }

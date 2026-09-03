@@ -1,3 +1,4 @@
+import { FeaturedServices } from "../../components/home/FeaturedServices";
 import { Hero } from "../../components/home/Hero";
 
 
@@ -7,6 +8,7 @@ export function Home() {
         <>
         <title>shipping-client | Home</title>
         <Hero />
+        <FeaturedServices />
         </>
     )
 }

@@ -25,10 +25,10 @@ export function FeaturedServices() {
         },
     ]
     return (
-        <section className="py-12 px-8 grid gap-6 lg:grid-cols-4 md:grid-cols-2">
+        <section className="py-16 px-8 grid gap-6 lg:grid-cols-4 md:grid-cols-2 bg-bg-white">
             {
                 featureDetails.map(feature => (
-                    <FeaturedCard icon={feature.icon} title={feature.title} text={feature.text} />
+                    <FeaturedCard key={feature.title} icon={feature.icon} title={feature.title} text={feature.text} />
                 ))
             }
         </section>

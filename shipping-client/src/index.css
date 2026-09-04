@@ -3,7 +3,8 @@
 @theme {
   --color-primary-light: #2563eb; 
   --color-primary-dark: #1e40af;
-  --color-text-dark: #212C3E;
+  --color-text-dark: #4b5563;
+  --color-bg-white: #F9FAFB;
 }
 
 

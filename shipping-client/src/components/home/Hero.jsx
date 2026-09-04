@@ -42,7 +42,7 @@ export function Hero() {
       {/* Hero content */}
       <div className="relative z-10 flex flex-col items-center justify-center gap-2">
         <h1 className="text-4xl font-bold lg:text-6xl md:text-5xl text-white text-center">
-          WE DELIVER ON TIME
+          WE DELIVER <span className="text-sky-400">ON TIME</span>
         </h1>
 
         <div className="rounded-3xl border border-white/40 bg-white/20 p-6 backdrop-blur-xl shadow-xl w-full my-6">

@@ -51,7 +51,7 @@ export function Hero() {
               type="search"
               name=""
               id=""
-              placeholder="Enter your tracking Number"
+              placeholder="Enter your tracking ID"
               className="h-12 min-h-12 bg-white rounded flex-1 px-2 text-base"
             />
             <button

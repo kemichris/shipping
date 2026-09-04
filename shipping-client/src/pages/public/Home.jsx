@@ -2,6 +2,7 @@ import { AimSection } from "../../components/home/AimSection";
 import { FeaturedServices } from "../../components/home/FeaturedServices";
 import { Hero } from "../../components/home/Hero";
 import { ServiceSection } from "../../components/home/ServiceSection";
+import { StatsSection } from "../../components/home/StatsSection";
 import { WelcomeSection } from "../../components/home/WelcomeSection";
 
 
@@ -15,6 +16,7 @@ export function Home() {
         <WelcomeSection />
         <AimSection />
         <ServiceSection />
+        <StatsSection />
         </>
     )
 }

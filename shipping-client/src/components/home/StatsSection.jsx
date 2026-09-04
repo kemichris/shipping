@@ -30,7 +30,7 @@ const stats = [
 
 export function StatsSection() {
   return (
-    <section className="bg-linear-to-r from-[#1E2D4C] to-primary-light py-12 px-8 flex flex-col md:flex-row md:items-center gap-8">
+    <section className="bg-linear-to-r from-[#1E2D4C] to-primary-light py-20 px-8 flex flex-col md:flex-row md:items-center gap-8">
       <div className="bg-white/20 p-8 rounded-2xl">
         <div className="flex items-center gap-2 mb-6">
           <div className="flex justify-center items-center w-16 h-16 px-4 rounded-xl text-white text-lg bg-white/30 ">

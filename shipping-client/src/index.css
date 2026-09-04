@@ -1,12 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-light: #2563eb; 
+  --color-primary-light: #2563eb;
   --color-primary-dark: #1e40af;
   --color-text-dark: #4b5563;
-  --color-bg-white: #F9FAFB;
-}
+  --color-bg-white: #f9fafb;
 
+  --animate-bounce-slightly: bounce-slightly 3s ease-in-out infinite;
+
+  @keyframes bounce-slightly {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-1rem);
+    }
+  }
+}
 
 @layer base {
   * {

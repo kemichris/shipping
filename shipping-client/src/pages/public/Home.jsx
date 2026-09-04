@@ -1,3 +1,4 @@
+import { AimSection } from "../../components/home/AimSection";
 import { FeaturedServices } from "../../components/home/FeaturedServices";
 import { Hero } from "../../components/home/Hero";
 import { WelcomeSection } from "../../components/home/WelcomeSection";
@@ -11,6 +12,7 @@ export function Home() {
         <Hero />
         <FeaturedServices />
         <WelcomeSection />
+        <AimSection />
         </>
     )
 }

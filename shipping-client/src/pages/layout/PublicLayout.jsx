@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 
 import { Navbar } from '../../components/layout/Navbar';
-// import { Footer } from '../../components/layout/Footer';
+import { Footer } from '../../components/layout/Footer';
 
 
 export function PublicLayout() {
@@ -9,7 +9,7 @@ export function PublicLayout() {
         <>
             <Navbar />
             <Outlet />
-            {/* <Footer /> */}
+            <Footer />
         </>
     );
 }

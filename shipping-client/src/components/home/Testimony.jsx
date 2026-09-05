@@ -40,7 +40,7 @@ export function Testimony() {
     },
   ];
   return (
-    <section className=" flex flex-col items-center py-12 px-8 bg-bg-white">
+    <section className=" flex flex-col items-center pt-12 pb-20 px-8 bg-bg-white">
       <h2 className="font-bold text-3xl md:text-4xl text-black mb-8 text-center">
         Client <span className="text-primary-light">Testimonials</span>
       </h2>

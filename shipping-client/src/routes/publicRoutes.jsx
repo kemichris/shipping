@@ -2,6 +2,8 @@ import { PublicLayout } from '../pages/layout/PublicLayout';
 import { Home } from '../pages/public/Home';
 import { About } from '../pages/public/About';
 import { Services } from '../pages/public/Services';
+import { Contact } from '../pages/public/Contact';
+
 
 
 export const publicRoutes = [
@@ -23,6 +25,10 @@ export const publicRoutes = [
             {
                 path: '/services',
                 element: <Services />,
+            },
+            {
+                path: '/contact',
+                element: <Contact />,
             },
             
         ],

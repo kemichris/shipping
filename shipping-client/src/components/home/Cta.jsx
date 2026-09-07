@@ -26,7 +26,7 @@ import { CtaCard } from "./CtaCard";
 
 export function Cta() {
     return (
-        <div className="flex gap-6 flex-col md:flex-row pt-28">
+        <div className="flex gap-6 flex-col items-center md:flex-row md:justify-center pt-28">
         {ctaDetails.map(detail => (
           <CtaCard key={detail.title} {...detail} />
         ))}

@@ -10,13 +10,13 @@ const testimonies = [
   },
   {
     review:
-      "I've been using this shipping company for a while now, and I must say, they never disappoint. Their staff are always friendly, and they take great care of my packages. I would recommend them to anyone looking for a reliable shipping service.",
-    name: "- kristen Hans",
+      "I was blown away by the fast and efficient service provided by this shipping company. My package arrived earlier than expected, and it was in perfect condition. I highly recommend their services!",
+    name: "- Jerry Stevenson",
   },
   {
     review:
-      "I've been using this shipping company for a while now, and I must say, they never disappoint. Their staff are always friendly, and they take great care of my packages. I would recommend them to anyone looking for a reliable shipping service.",
-    name: "- kristen Hans",
+      "I am thoroughly impressed with the level of service from this team. The entire process was seamless, tracking updates were highly accurate, and the customer support was incredibly responsive. My items arrived safely and right on schedule. I will definitely be using them for all my future shipping needs!",
+    name: "- Sarah",
   },
 ];
 

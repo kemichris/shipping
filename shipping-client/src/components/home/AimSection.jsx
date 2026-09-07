@@ -64,8 +64,8 @@ export function AimSection() {
 
         <div className=" pt-6 border-t border-gray-500 flex items-center gap-4 ">
           <ImUsers size={35} className="text-orange-500" />
-          <p class="text-sm text-gray-300">
-            Trusted by <strong class="text-white font-semibold">89,000+</strong>{" "}
+          <p className="text-sm text-gray-300">
+            Trusted by <strong className="text-white font-semibold">89,000+</strong>{" "}
             businesses. Moving your parcel across the world.
           </p>
         </div>

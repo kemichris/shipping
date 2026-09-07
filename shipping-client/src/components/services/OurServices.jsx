@@ -3,9 +3,9 @@ import { FaTruckFast, FaLocationDot } from "react-icons/fa6";
 import { MdOutlineStorage } from "react-icons/md";
 
 
-
 import { SectionHeader } from "./SectionHeader";
 import { ServicesCard } from "./ServicesCard";
+import { Cta } from "../home/Cta";
 
 export function OurServices() {
     const services = [
@@ -58,6 +58,8 @@ export function OurServices() {
             <ServicesCard key={service.title} {...service} />
         ))}
       </div>
+
+      <Cta />
     </section>
   );
 }

@@ -1,6 +1,7 @@
 import { PublicLayout } from '../pages/layout/PublicLayout';
 import { Home } from '../pages/public/Home';
 import { About } from '../pages/public/About';
+import { Services } from '../pages/public/Services';
 
 
 export const publicRoutes = [
@@ -18,6 +19,10 @@ export const publicRoutes = [
             {
                 path: '/about',
                 element: <About />,
+            },
+            {
+                path: '/services',
+                element: <Services />,
             },
             
         ],

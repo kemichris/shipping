@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { MdOutlineSupportAgent } from "react-icons/md";
-import { FaSearchLocation } from "react-icons/fa";
+
 
 import { Button } from "../common/Button";
 
@@ -8,6 +8,7 @@ import heroImg1 from "../../assets/heroImg1.jpg";
 import heroImg2 from "../../assets/heroImg2.avif";
 import heroImg3 from "../../assets/heroImg3.avif";
 import heroImg4 from "../../assets/heroImg4.avif";
+import { TrackingForm } from "../common/TrackingForm";
 
 export function Hero() {
   const images = [heroImg1, heroImg2, heroImg3, heroImg4];
@@ -45,24 +46,7 @@ export function Hero() {
           WE DELIVER <span className="text-sky-400">ON TIME</span>
         </h1>
 
-        <div className="rounded-3xl border border-white/40 bg-white/20 p-6 backdrop-blur-xl shadow-xl w-full my-6">
-          <form className="flex flex-col md:flex-row gap-4 items-stretch md:items-center">
-            <input
-              type="search"
-              name=""
-              id=""
-              placeholder="Enter your tracking ID"
-              className="h-12 min-h-12 bg-white rounded flex-1 px-2 text-base"
-            />
-            <button
-              type="submit"
-              className="shrink-0 w-full md:w-auto justify-center bg-linear-to-r from-primary-light to-primary-dark rounded-lg flex items-center gap-2 py-2 px-6 text-white transition-transform duration-300 ease-out hover:scale-105"
-            >
-              <FaSearchLocation />
-              Track Now
-            </button>
-          </form>
-        </div>
+        <TrackingForm />
 
         <p className="text-white text-center text-base md:text-lg">
           Join the millions getting bargain deals on shipping cars, furniture,

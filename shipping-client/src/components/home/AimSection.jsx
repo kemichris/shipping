@@ -22,7 +22,7 @@ const services = [
 import aimImg1 from "../../assets/aimImg1.png";
 export function AimSection() {
   return (
-    <section className="bg-linear-to-r from-[#1E2D4C] to-primary-light py-12 px-8 flex flex-col md:flex-row md:items-center gap-8">
+    <section className="bg-linear-to-r from-secondary-dark to-primary-light py-12 px-8 flex flex-col md:flex-row md:items-center gap-8">
       <img
         src={aimImg1}
         alt=""

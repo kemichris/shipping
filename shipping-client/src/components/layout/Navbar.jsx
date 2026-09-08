@@ -20,7 +20,7 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 w-full bg-white flex items-center justify-between px-8 py-4 shadow-md z-50">
+      <nav className="fixed top-0 w-full bg-white flex items-center justify-between px-8 py-4 shadow-md z-1000">
         {/* <img src={Logo} alt="Logo" className="logo" /> */}
         <FaTruckArrowRight size={25} />
 

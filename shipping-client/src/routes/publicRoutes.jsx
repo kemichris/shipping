@@ -3,6 +3,7 @@ import { Home } from '../pages/public/Home';
 import { About } from '../pages/public/About';
 import { Services } from '../pages/public/Services';
 import { Contact } from '../pages/public/Contact';
+import { Tracking } from '../pages/public/Tracking';
 
 
 
@@ -29,6 +30,10 @@ export const publicRoutes = [
             {
                 path: '/contact',
                 element: <Contact />,
+            },
+            {
+                path: '/tracking',
+                element: <Tracking />,
             },
             
         ],

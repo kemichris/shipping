@@ -1,4 +1,4 @@
-import { FaMapMarkedAlt, FaBell } from "react-icons/fa6";
+import { FaMapMarkedAlt, FaBell } from "react-icons/fa";
 import { RiTimeZoneFill } from "react-icons/ri";
 
 import { SectionHeader } from "../services/SectionHeader";
@@ -29,7 +29,7 @@ export function WhyUs() {
         blueText="Tracking System"
       />
 
-      <div className="mt-10 grid gap-8 grid-cols-1 md:grid-cols-4">
+      <div className="mt-10 grid gap-8 grid-cols-1 md:grid-cols-3">
         {whys.map((why, index) => (
           <div
             key={index}

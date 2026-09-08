@@ -1,5 +1,4 @@
 import { TrackingForm } from "../common/TrackingForm";
-import { WhyUs } from "./WhyUs";
 
 export function TrackingHero() {
   return (
@@ -16,8 +15,6 @@ export function TrackingHero() {
         </p>
 
         <TrackingForm />
-
-        <WhyUs />
       </div>
     </section>
   );

@@ -11,8 +11,15 @@ router.post(
   shipmentController.createShipment
 );
 
-router.post(
-  "/update",
+router.patch(
+  "/update/:id",
+  protect,
+  authorize("admin"),
+  shipmentController.updateShipment
+);
+
+router.patch(
+  "/update/location/:id",
   protect,
   authorize("admin"),
   shipmentController.updateShipment

@@ -23,7 +23,7 @@ export function SidebarItem({ link, setSidebarOpen }) {
                 rounded-xl
                 mb-2
                 transition-all
-                ${isActive ? "bg-sky-200 text-primary-light" : "text-dark hover:bg-bg-white hover:text-text-black"}
+                ${isActive ? "bg-sky-500 text-white hover:text-black" : "text-text-dark bg-sky-200 hover:text-black"}
             `}
         >
             <Icon size={20} />

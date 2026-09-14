@@ -44,7 +44,7 @@ export function Header({
                 items-center
                 justify-between
                 border-b
-                border-border
+                border-gray-200
                 bg-surface-1
                 px-6
                 py-4

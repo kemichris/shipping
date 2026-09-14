@@ -10,7 +10,12 @@ export const sidebarData = [
       {
         name: 'Dashboard',
         icon: RxDashboard,
-        path: '/dashboard'
+        path: '/admin'
+      },
+      {
+        name: 'setting',
+        icon: RxDashboard,
+        path: '/admin/setting'
       },
     ]
   },

@@ -60,7 +60,7 @@ const shipmentSchema = new mongoose.Schema(
     status: {
       type: String,
       enum: [
-        "pending",
+        "pending_payment",
         "picked_up",
         "in_transit",
         "out_for_delivery",

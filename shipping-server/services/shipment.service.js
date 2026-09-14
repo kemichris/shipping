@@ -86,9 +86,7 @@ export const updateShipment = async (shipmentId, data) => {
 };
 
 // Update location
-export const updateLocation = async (shipmentId, data) => {
-    const { currentLocation } = data;
-
+export const updateLocation = async (shipmentId, currentLocation, userId) => {
     const shipment = await Shipment.findById(shipmentId);
 
     if (!shipment) {
@@ -110,6 +108,29 @@ export const updateLocation = async (shipmentId, data) => {
             coordinates: currentLocation.coordinates,
         },
         occurredAt: new Date(),
+        updatedBy: userId,
+    });
+
+    await shipment.save();
+
+    return shipment;
+};
+
+export const updateStatus = async (shipmentId, newStatus, userId) => {
+    const shipment = await Shipment.findById(shipmentId);
+
+    if (!shipment) {
+        throw new ApiError(404, 'Shipment not found');
+    }
+
+    shipment.status = newStatus;
+
+    shipment.trackingEvents.push({
+        status: newStatus,
+        message: `Shipment status updated to ${newStatus}`,
+        location: shipment.currentLocation,
+        occurredAt: new Date(),
+        updatedBy: userId,
     });
 
     await shipment.save();

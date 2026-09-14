@@ -36,7 +36,9 @@ export const updateShipment = async (req, res, next) => {
 export const updateLocation = async (req, res, next) => {
     try {
         const { id } = req.params
-        const shipment = await shipmentServices.updateLocation(id, data)
+        const userId = req.user._id
+        const data = req.body
+        const shipment = await shipmentServices.updateLocation(id, data, userId)
 
         return res.status(200).json({
             success: true,

@@ -22,7 +22,7 @@ router.patch(
   "/update/location/:id",
   protect,
   authorize("admin"),
-  shipmentController.updateShipment
+  shipmentController.updateLocation
 );
 
 

@@ -11,5 +11,12 @@ router.post(
   shipmentController.createShipment
 );
 
+router.post(
+  "/update",
+  protect,
+  authorize("admin"),
+  shipmentController.updateShipment
+);
+
 
 export default router

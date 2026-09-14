@@ -2,6 +2,7 @@ import Shipment from '../models/shipment.model.js';
 import ApiError from '../utils/apiError.utils.js';
 import { generateTrackingNumber } from '../utils/shipment.utils.js';
 
+// Create shipment
 export const createShipment = async (userId, shipmentData) => {
     const {
         sender,
@@ -63,6 +64,25 @@ export const createShipment = async (userId, shipmentData) => {
             },
         ],
     });
+
+    return shipment;
+};
+
+// Edit Shipment
+export const updateShipment = async (userId, data) => {
+    const { shipmentId, ...updates } = data;
+
+    const shipment = await Shipment.findById(shipmentId);
+
+    if (!shipment) {
+        throw new ApiError(404, 'Shipment not found');
+    }
+
+    Object.assign(shipment, updates);
+    
+    shipment.updatedBy = userId;
+
+    await shipment.save();
 
     return shipment;
 };

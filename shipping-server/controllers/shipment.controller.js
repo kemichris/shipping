@@ -15,3 +15,18 @@ export const createShipment = async (req, res, next)=> {
         next(error)
     }
 }
+
+export const updateShipment = async (req, res, next) => {
+    try {
+        const userId = req.user._id
+        const shipment = await shipmentServices.updateShipment(userId, req.body)
+
+        return res.status(200).json({
+            success: true,
+            message: 'Shipment updated successfully',
+            data: shipment
+        })
+    } catch (error) {
+        next(error)
+    }
+}

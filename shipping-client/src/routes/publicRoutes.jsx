@@ -5,14 +5,15 @@ import { Services } from '../pages/public/Services';
 import { Contact } from '../pages/public/Contact';
 import { Tracking } from '../pages/public/Tracking';
 import { Track } from '../pages/public/Track';
+import { Login } from '../pages/public/Login';
 
 
 
 export const publicRoutes = [
-    // {
-    //     path: '/login',
-    //     element: <Login />,
-    // },
+    {
+        path: '/login',
+        element: <Login />,
+    },
     {
         element: <PublicLayout />,
         children: [

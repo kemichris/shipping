@@ -50,3 +50,22 @@ export const updateLocation = async (req, res, next) => {
         next(error)
     }
 }
+
+// Update status
+export const updateStatus = async (req, res, next) => {
+    try {
+        const { id } = req.params
+        const userId = req.user._id
+        const data = req.body
+        const shipment = await shipmentServices.updateStatus(id, data, userId)
+
+        return res.status(200).json({
+            success: true,
+            message: 'Status updated successfully',
+            data: shipment
+        })
+
+    } catch (error) {
+        next(error)
+    }
+}

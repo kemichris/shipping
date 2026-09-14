@@ -25,5 +25,12 @@ router.patch(
   shipmentController.updateLocation
 );
 
+router.patch(
+  "/update/status/:id",
+  protect,
+  authorize("admin"),
+  shipmentController.updateStatus
+);
+
 
 export default router

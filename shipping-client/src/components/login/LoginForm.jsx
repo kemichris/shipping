@@ -4,7 +4,7 @@ import { FaUser, FaKey } from "react-icons/fa6";
 import loginImg from "../../assets/loginImg.jpg";
 import logo from "../../assets/shiplogo.png";
 
-export function LoginForm() {
+export function LoginForm({ formData, handleChange, handleSubmit, loading }) {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -42,7 +42,7 @@ export function LoginForm() {
               </p>
             </div>
 
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               {/* User */}
               <div>
                 <label
@@ -58,7 +58,9 @@ export function LoginForm() {
                   <input
                     id="user"
                     type="text"
-                    name="user"
+                    name="userName"
+                    value={formData.userName}
+                    onChange={handleChange}
                     placeholder="Enter username"
                     className="h-10 w-full rounded-lg border border-[#d6dce5] bg-[#e9f0fc] pl-16 pr-5 text-base text-[#172033] outline-none transition focus:border-[#0184C7] focus:ring-2 focus:ring-[#0184C7]/20"
                   />
@@ -82,6 +84,8 @@ export function LoginForm() {
                     type={showPassword ? "text" : "password"}
                     name="password"
                     placeholder="Enter password"
+                    value={formData.password}
+                    onChange={handleChange}
                     className="h-10 w-full rounded-lg border border-[#d6dce5] bg-[#e9f0fc] pl-16 pr-16 text-base text-[#172033] outline-none transition focus:border-[#0184C7] focus:ring-2 focus:ring-[#0184C7]/20"
                   />
 
@@ -100,6 +104,8 @@ export function LoginForm() {
                 <label className="flex cursor-pointer items-center gap-3">
                   <input
                     type="checkbox"
+                    checked={formData.keepSignedIn}
+                    onChange={handleChange}
                     className="h-3 w-3 rounded border-gray-300"
                   />
 
@@ -111,6 +117,7 @@ export function LoginForm() {
                 <button
                   type="button"
                   className="text-sm font-medium text-[#3f4d61] hover:text-[#0184C7]"
+
                 >
                   Forgot your password?
                 </button>
@@ -119,9 +126,10 @@ export function LoginForm() {
               {/* Enter */}
               <button
                 type="submit"
+                 disabled={loading}
                 className=" w-full py-2 rounded-xl bg-linear-to-r from-primary-dark to-primary-light text-base font-bold text-white shadow-sm transition hover:opacity-90"
               >
-                ENTER
+                {loading ? 'Signing In...' : 'Sign In'}
               </button>
             </form>
 

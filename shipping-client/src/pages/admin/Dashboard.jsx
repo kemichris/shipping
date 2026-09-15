@@ -1,7 +1,9 @@
+import { Stats } from "../../components/dashboard/Stats";
+
 export function Dashboard() {
     return (
         <>
-        <h1>Dashboard</h1>
+        <Stats />
         </>
     )
 }

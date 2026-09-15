@@ -11,7 +11,7 @@ export function AdminLayout() {
     return (
         <div className="min-h-screen bg-surface-1">
             <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-            <main className='pb-6 pt-25 lg:ml-50 lg:pl-14 px-8 '>
+            <main className='pb-6 pt-25 lg:ml-50 lg:pl-14 px-8 bg-bg-white'>
                 <Header username={username} profileimage={profileImage} sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
                 <Outlet />

@@ -6,14 +6,12 @@ import {
   HiOutlineXMark,
   HiOutlineUser,
   HiOutlineQuestionMarkCircle,
-//   HiOutlineArrowRightOnRectangle,
+  HiOutlineArrowRightOnRectangle,
 } from "react-icons/hi2";
 
-// import { logout } from "../../services/auth.service";
+import { logout } from "../../services/auth.service";
 
 export function Header({
-  username,
-  profileimage,
   sidebarOpen,
   setSidebarOpen,
 }) {
@@ -21,15 +19,15 @@ export function Header({
 
   const navigate = useNavigate();
 
-  //   const handleLogout = () => {
-  //     logout();
+  const handleLogout = () => {
+    logout();
 
-  //     setProfileOpen(false);
+    setProfileOpen(false);
 
-  //     navigate("/login", {
-  //       replace: true,
-  //     });
-  //   };
+    navigate("/login", {
+      replace: true,
+    });
+  };
 
   return (
     <header
@@ -65,9 +63,9 @@ export function Header({
 
       {/* Left */}
       <div>
-        <h1 className="text-2xl font-bold text-text">Dashboard</h1>
+        <h1 className="text-2xl font-bold text-primary-light">Dashboard</h1>
 
-        <p className="text-sm text-text-muted">Welcome back, {username}</p>
+        <p className="text-sm text-text-dark">Logistic Admin</p>
       </div>
 
       {/* Right */}
@@ -95,19 +93,13 @@ export function Header({
                 overflow-hidden
                 rounded-full
                 border
-              border-amber-50
-              bg-primary
+              border-gray-400
+              bg-bg-white
                 "
             >
-              {profileimage ? (
-                <img
-                  src={profileimage}
-                  alt="Profile"
-                  className="h-full w-full object-cover"
-                />
-              ) : (
-                <FaUser className="text-text" />
-              )}
+              {
+                <FaUser className="text-text-dark" />
+              }
             </div>
           </button>
 
@@ -123,13 +115,13 @@ export function Header({
                                 overflow-hidden
                                 rounded-2xl
                                 border
-                                border-border
-                                bg-surface-2
+                                border-gray-200
+                                bg-bg-white
                                 shadow-2xl
                             "
             >
               {/* User information */}
-              <div className="px-5 py-4">
+              <div className="px-5 py-4 bg-primary-dark">
                 <div className="flex items-center gap-3">
                   <div
                     className="
@@ -141,33 +133,23 @@ export function Header({
                         overflow-hidden
                         rounded-full
                         border
-                        border-amber-50
-                      bg-primary
+                        border-gray-400
+                      bg-bg-white
                     "
                   >
-                    {profileimage ? (
-                      <img
-                        src={profileimage}
-                        alt="Profile"
-                        className="h-full w-full object-cover"
-                      />
-                    ) : (
-                      <FaUser className="text-white" />
-                    )}
+                    {<FaUser className="text-text-dark" />}
                   </div>
 
                   <div className="min-w-0">
-                    <p className="truncate font-semibold text-text">
-                      {username}
-                    </p>
+                    <p className="truncate font-semibold text-white">Admin</p>
 
-                    <p className="text-sm text-text-muted">Account</p>
+                    <p className="text-sm text-gray-400">Account</p>
                   </div>
                 </div>
               </div>
 
               {/* Menu */}
-              <div className="border-t border-border py-2">
+              <div className="border-t border-gray-200 py-2 text-sm text-text-dark">
                 {/* Profile Settings */}
                 <button
                   type="button"
@@ -179,7 +161,7 @@ export function Header({
                                         flex
                                         w-full
                                         items-center
-                                        gap-4
+                                        gap-2
                                         px-5
                                         py-3
                                         text-left
@@ -217,7 +199,7 @@ export function Header({
                                         flex
                                         w-full
                                         items-center
-                                        gap-4
+                                        gap-2
                                         px-5
                                         py-3
                                         text-left
@@ -246,7 +228,7 @@ export function Header({
               </div>
 
               {/* Sign out */}
-              {/* <div className="border-t border-border px-4 py-3">
+              <div className="border-t border-gray-200 px-4 py-3">
                 <button
                   type="button"
                   onClick={handleLogout}
@@ -254,7 +236,7 @@ export function Header({
                                         flex
                                         w-full
                                         items-center
-                                        gap-4
+                                        gap-2
                                         rounded-xl
                                         px-3
                                         py-3
@@ -267,20 +249,20 @@ export function Header({
                   <span
                     className="
                                             flex
-                                            h-10
-                                            w-10
+                                            h-8
+                                            w-8
                                             items-center
                                             justify-center
                                             rounded-xl
                                             bg-red-500/10
                                         "
                   >
-                    <HiOutlineArrowRightOnRectangle size={21} />
+                    <HiOutlineArrowRightOnRectangle size={15} />
                   </span>
 
-                  <span className="font-semibold">Sign Out</span>
+                  <span className="font-medium text-sm">Sign Out</span>
                 </button>
-              </div> */}
+              </div>
             </div>
           )}
         </div>

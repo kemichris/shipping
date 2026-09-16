@@ -5,3 +5,8 @@ export const login = async (formData) => {
   const { data } = await api.post("/auth/login", formData);
   return data;
 };
+
+export const logout = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("role");
+};

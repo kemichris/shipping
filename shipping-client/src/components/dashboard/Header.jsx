@@ -45,7 +45,7 @@ export function Header({
                 justify-between
                 border-b
                 border-gray-200
-                bg-surface-1
+                bg-cyan-100
                 px-6
                 py-4
             "

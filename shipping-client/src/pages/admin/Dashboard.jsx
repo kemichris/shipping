@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { RecentShipment } from "../../components/dashboard/RecentShipment";
 import { Stats } from "../../components/dashboard/Stats";
+import { PageLoader } from "../../components/common/PageLoader";
 
 import { getDashboard } from "../../services/dashboard.service";
 
 export function Dashboard() {
   const [dashboardData, setDashboardData] = useState(null);
+    const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadDashboard = async () => {
@@ -15,11 +17,17 @@ export function Dashboard() {
         setDashboardData(res.data);
       } catch (error) {
         console.error(error.response?.data || error);
+      } finally {
+        setLoading(false);
       }
     };
 
     loadDashboard();
   }, []);
+
+   if (loading) {
+    return <PageLoader />;
+  }
 
   if (!dashboardData) {
     return (

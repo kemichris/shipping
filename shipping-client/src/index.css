@@ -8,6 +8,8 @@
   --color-bg-white: #f9fafb;
 
   --animate-bounce-slightly: bounce-slightly 3s ease-in-out infinite;
+  --animate-truck-drive: truck-drive 1.2s ease-in-out infinite;
+  --animate-road-slide: road-slide 0.8s linear infinite;
 
   @keyframes bounce-slightly {
     0%,
@@ -18,6 +20,36 @@
     50% {
       transform: translateY(-1rem);
     }
+  }
+
+  @keyframes truck-drive {
+    0%,
+    100% {
+      transform: translateX(-0.35rem) rotate(-1deg);
+    }
+
+    50% {
+      transform: translateX(0.35rem) rotate(1deg);
+    }
+  }
+
+  @keyframes road-slide {
+    from {
+      transform: translateX(-2rem);
+    }
+
+    to {
+      transform: translateX(6rem);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
 

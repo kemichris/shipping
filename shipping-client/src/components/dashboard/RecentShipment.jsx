@@ -2,38 +2,6 @@ import { Link } from "react-router-dom";
 
 import { FaCircle } from "react-icons/fa";
 
-// const shipments = [
-//   {
-//     name: "Kira yang",
-//     trackingId: "vbg8393939",
-//     status: "pending",
-//     date: "23/06/2026",
-//   },
-//   {
-//     name: "Kira yang",
-//     trackingId: "vbg8393995",
-//     status: "pending",
-//     date: "23/06/2026",
-//   },
-//   {
-//     name: "Kira yang",
-//     trackingId: "vbg8493939",
-//     status: "pending",
-//     date: "23/06/2026",
-//   },
-//   {
-//     name: "Kira yang",
-//     trackingId: "vbg8393938",
-//     status: "pending",
-//     date: "23/06/2026",
-//   },
-//   {
-//     name: "Kira yang",
-//     trackingId: "vbg8393930",
-//     status: "pending",
-//     date: "23/06/2026",
-//   },
-// ];
 
 export function RecentShipment({recentShipments}) {
   return (
@@ -41,7 +9,7 @@ export function RecentShipment({recentShipments}) {
       <div className="px-4 flex justify-between items-center pb-3 border-b border-gray-200">
         <h3 className="text-xl font-semibold">Recent Shipments</h3>
         <Link to="/shipments" className="text-primary-light">
-          View all{" "}
+          View all
         </Link>
       </div>
       {recentShipments.map((shipment) => (

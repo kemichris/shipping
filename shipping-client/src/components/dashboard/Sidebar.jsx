@@ -9,7 +9,7 @@ export function Sidebar({ sidebarOpen, setSidebarOpen }) {
         <aside
             className={`
                 w-60 
-              bg-bg-white 
+                bg-cyan-100
                 fixed 
                 left-0 
                 top-20

@@ -11,10 +11,7 @@ import {
 
 import { logout } from "../../services/auth.service";
 
-export function Header({
-  sidebarOpen,
-  setSidebarOpen,
-}) {
+export function Header({ sidebarOpen, setSidebarOpen }) {
   const [profileOpen, setProfileOpen] = useState(false);
 
   const navigate = useNavigate();
@@ -32,21 +29,21 @@ export function Header({
   return (
     <header
       className="
-                fixed
-                top-0
-                right-0
-                z-50
-                flex
-                h-20
-                w-full
-                items-center
-                justify-between
-                border-b
-                border-gray-200
-                bg-cyan-100
-                px-6
-                py-4
-            "
+        fixed
+        top-0
+        right-0
+        z-50
+        flex
+        h-20
+        w-full
+        items-center
+        justify-between
+        border-b
+      border-gray-200
+      bg-cyan-100
+        px-6
+        py-4
+      "
     >
       {/* Mobile menu */}
       <button
@@ -77,11 +74,11 @@ export function Header({
             type="button"
             onClick={() => setProfileOpen((previous) => !previous)}
             className="
-                            rounded-lg
-                            p-2
-                            transition
-                            hover:bg-surface-2
-                        "
+              rounded-lg
+              p-2
+              transition
+              hover:bg-surface-2
+            "
           >
             <div
               className="
@@ -97,9 +94,7 @@ export function Header({
               bg-bg-white
                 "
             >
-              {
-                <FaUser className="text-text-dark" />
-              }
+              {<FaUser className="text-text-dark" />}
             </div>
           </button>
 

@@ -66,6 +66,7 @@ export function Dashboard() {
 
   return (
     <>
+    <title>shipping-client | Dashboard</title>
       <Stats statDatas={statsData} />
       <RecentShipment recentShipments={dashboardData.recentShipments} />
     </>

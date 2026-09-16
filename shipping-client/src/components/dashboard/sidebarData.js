@@ -1,5 +1,4 @@
-
-
+import {FaPlus} from "react-icons/fa";
 import { RxDashboard } from "react-icons/rx";
 
 
@@ -13,9 +12,9 @@ export const sidebarData = [
         path: '/admin'
       },
       {
-        name: 'setting',
-        icon: RxDashboard,
-        path: '/admin/setting'
+        name: 'New Shipment',
+        icon: FaPlus,
+        path: '/admin/new-shipment'
       },
     ]
   },

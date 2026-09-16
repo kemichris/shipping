@@ -2,7 +2,7 @@ import Shipment from "../models/shipment.model.js";
 import ApiError from "../utils/apiError.utils.js";
 
 export const getDashboard = async () => {
-  const [totalShipment, pending, inTransit, delivered, recentTransaction] = await Promise.all([
+  const [totalShipments, pending, inTransit, delivered, recentShipments] = await Promise.all([
     Shipment.countDocuments(),
     Shipment.countDocuments({ status: "pending" }),
     Shipment.countDocuments({ status: "in_transit" }),
@@ -11,10 +11,10 @@ export const getDashboard = async () => {
   ]);
 
   return {
-    totalShipment,
+    totalShipments,
     pending,
     inTransit,
     delivered,
-    recentTransaction
+    recentShipments
   };
 };

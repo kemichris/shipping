@@ -29,10 +29,37 @@ export function Dashboard() {
     );
   }
 
+  const statsData = [
+    {
+      title: "Total Shipments",
+      stat: dashboardData.totalShipments,
+      timeline: "All time",
+      style: "border-blue-500",
+    },
+    {
+      title: "Pending",
+      stat: dashboardData.pending,
+      timeline: "Pending confirmation",
+      style: "border-red-500",
+    },
+    {
+      title: "In Transit",
+      stat: dashboardData.inTransit,
+      timeline: "Active",
+      style: "border-yellow-500",
+    },
+    {
+      title: "Delivered",
+      stat: dashboardData.delivered,
+      timeline: "Completed",
+      style: "border-green-500",
+    },
+  ];
+
   return (
     <>
-      <Stats />
-      <RecentShipment />
+      <Stats statDatas={statsData} />
+      <RecentShipment recentShipments={dashboardData.recentShipments} />
     </>
   );
 }

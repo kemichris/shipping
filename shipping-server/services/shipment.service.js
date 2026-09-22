@@ -137,3 +137,14 @@ export const updateStatus = async (shipmentId, newStatus, userId) => {
 
     return shipment;
 };
+
+
+export const getShipmentStatus = async (trackingNumber) => {
+    const shipment = await Shipment.findOne({ trackingNumber });
+
+    if (!shipment) {
+        throw new ApiError(404, 'Shipment not found');
+    }
+
+    return shipment;
+};

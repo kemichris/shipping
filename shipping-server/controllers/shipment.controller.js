@@ -69,3 +69,20 @@ export const updateStatus = async (req, res, next) => {
         next(error)
     }
 }
+
+// get shipment status
+export const getShipmentStatus = async (req, res, next) => {
+    try {
+        const { id } = req.params
+        const shipment = await shipmentServices.getShipmentStatus(id)
+
+        return res.status(200).json({
+            success: true,
+            message: 'Shipment status retrieved successfully',
+            data: shipment
+        })
+
+    } catch (error) {
+        next(error)
+    }
+}

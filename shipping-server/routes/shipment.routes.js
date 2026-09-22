@@ -32,5 +32,11 @@ router.patch(
   shipmentController.updateStatus
 );
 
+// get shipment status
+router.get(
+  "/status/:id",
+  shipmentController.getShipmentStatus
+);
+
 
 export default router

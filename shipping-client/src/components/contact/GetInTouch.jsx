@@ -11,6 +11,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { SectionHeader } from "../services/SectionHeader";
 import { ContactCard } from "./ContactCard";
 import { Cta } from "../home/Cta";
+import { companyContact } from "../../data/companyContact";
 
 const emailEnquiries = [
   {
@@ -39,7 +40,7 @@ const contactDetails = [
   {
     icon: <FaLocationDot />,
     title: "Our Location",
-    text: "250 Moonachie Rd, Moonachie, NJ 07074, United States",
+    text: companyContact.address,
     contact: "",
   },
 
@@ -47,7 +48,8 @@ const contactDetails = [
     icon: <FaPhone />,
     title: "Phone Number",
     text: "24/7 Customer Support",
-    contact: "+12748891407",
+    contact: companyContact.phone,
+    contactHref: companyContact.phoneHref,
   },
 
   {
@@ -110,6 +112,7 @@ export function GetInTouch() {
               title={contact.title}
               text={contact.text}
               contact={contact.contact}
+              contactHref={contact.contactHref}
             />
           ))}
         </div>

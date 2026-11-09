@@ -1,57 +1,10 @@
-import { useEffect, useState } from "react";
-
-export function ProgressBar() {
-  const currentProgress = 25;
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    let interval;
-    let timeout;
-
-    const startProgress = () => {
-      setProgress(0);
-
-      interval = setInterval(() => {
-        setProgress((prev) => {
-          if (prev >= currentProgress) {
-            clearInterval(interval);
-
-            timeout = setTimeout(() => {
-              startProgress();
-            }, 5000);
-
-            return currentProgress;
-          }
-
-          return prev + 1;
-        });
-      }, 80);
-    };
-
-    startProgress();
-
-    return () => {
-      clearInterval(interval);
-      clearTimeout(timeout);
-    };
-  }, [currentProgress]);
-
+export function ProgressBar({ progress = 0 }) {
+  const value = Math.min(100, Math.max(0, progress));
   return (
-    <div className="w-full ">
-      <p className="uppercase text-text-dark font-semibold text-center mb-2">
-        Shipment Progress
-      </p>
-      <div className="relative h-6 w-full overflow-hidden rounded-full bg-gray-200">
-        <div
-          className="absolute left-0 top-0 flex h-full rounded-full bg-blue-600 transition-all duration-75"
-          style={{ width: `${progress}%` }}
-        >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="z-10 font-semibold text-xs text-white">
-              {progress}%
-            </span>
-          </div>
-        </div>
+    <div className="w-full" aria-label={`Shipment journey ${value}% complete`}>
+      <div className="mb-2 flex items-center justify-between text-sm"><p className="font-semibold text-slate-800">Journey progress</p><p className="font-semibold text-primary-dark">{value}%</p></div>
+      <div className="h-2.5 w-full overflow-hidden rounded-full bg-slate-100" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={value}>
+        <div className="h-full rounded-full bg-primary-light transition-[width] duration-500" style={{ width: `${value}%` }} />
       </div>
     </div>
   );

@@ -48,9 +48,8 @@ export function Hero() {
 
         <TrackingForm />
 
-        <p className="text-white text-center text-base md:text-lg">
-          Join the millions getting bargain deals on shipping cars, furniture,
-          freight, and more.
+        <p className="max-w-2xl text-center text-base text-white md:text-lg">
+          Send with confidence and follow every shipment from pickup to delivery.
         </p>
 
         <Button

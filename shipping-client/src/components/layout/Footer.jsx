@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { FaTruckArrowRight, FaLocationDot, FaClock } from "react-icons/fa6";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 import { MdOutlineSupportAgent } from "react-icons/md";
+import { companyContact } from "../../data/companyContact";
 
 export function Footer() {
   const className = 'flex items-center gap-2 text-gray-500'
@@ -13,9 +14,9 @@ export function Footer() {
           {/* <img src={Logo} alt="Logo" className="logo" /> */}
           <FaTruckArrowRight size={25} />
           <p >Shipment is a global supplier transport and logistic solutions.</p>
-          <p className={`${className}`}>
-            <FaPhone /> +144494844
-          </p>
+          <a className={`${className}`} href={companyContact.phoneHref}>
+            <FaPhone /> {companyContact.phone}
+          </a>
           <p className={`${className}`}>
             <FaEnvelope /> support@shipment.com
           </p>
@@ -43,8 +44,7 @@ export function Footer() {
           <h3 className="font-semibold text-xl mb-4">Contact Info</h3>
           <div className="grid gap-2">
             <p className={`${className}`}>
-            <FaLocationDot /> 250 Moonachie Rd, Moonachie, NJ 07074, United
-            States
+            <FaLocationDot /> {companyContact.address}
           </p>
           <p className={`${className}`}>
             <FaClock /> Mon - Fri: 8:00 AM - 8:00 PM

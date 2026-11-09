@@ -1,8 +1,8 @@
-# SwiftShip 🚚
+# Shipping 🚚
 
 **A modern shipping and logistics platform designed to simplify shipment management and package tracking.**
 
-SwiftShip is a shipping and logistics application built to make shipment tracking and delivery information more accessible. It provides customers with a way to track shipments using unique tracking numbers and stay informed about their delivery progress.
+Shipping is a shipping and logistics application built to make shipment tracking and delivery information more accessible. It provides customers with a way to track shipments using unique tracking numbers and stay informed about their delivery progress.
 
 ## ✨ Features
 
@@ -25,7 +25,7 @@ Update this section to reflect the actual technologies used in the main applicat
 ## 📁 Project Structure
 
 ```text
-SwiftShip/
+Shipping/
 ├── controllers/
 ├── models/
 ├── routes/
@@ -58,7 +58,7 @@ git clone <repository-url>
 2. Navigate into the project directory:
 
 ```bash
-cd SwiftShip
+cd Shipping
 ```
 
 3. Install dependencies:
@@ -92,7 +92,7 @@ The tracking system provides information such as:
 
 ## 🤖 AI Integration
 
-SwiftShip also incorporates an AI-powered customer support system designed to improve the customer experience.
+Shipping also incorporates an AI-powered customer support system designed to improve the customer experience.
 
 The AI integration supports:
 
@@ -125,4 +125,4 @@ Portfolio: [kemichris.online](https://kemichris.online)
 
 ---
 
-*SwiftShip — Making shipping and delivery information simpler and more accessible.*
+*Shipping — Making shipping and delivery information simpler and more accessible.*

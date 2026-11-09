@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaTruckArrowRight, FaLocationDot, FaClock } from "react-icons/fa6";
+import { FaLocationDot, FaClock } from "react-icons/fa6";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { companyContact } from "../../data/companyContact";

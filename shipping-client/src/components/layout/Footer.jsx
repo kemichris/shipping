@@ -3,6 +3,7 @@ import { FaTruckArrowRight, FaLocationDot, FaClock } from "react-icons/fa6";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { companyContact } from "../../data/companyContact";
+import Logo from '../../assets/shipping_logo.png'
 
 export function Footer() {
   const className = 'flex items-center gap-2 text-gray-500'
@@ -11,8 +12,7 @@ export function Footer() {
     <footer className=" pt-16 pb-12 px-8 border-t border-gray-200">
       <div className="flex flex-col gap-8 lg:flex-row lg:justify-between pb-12 border-b border-gray-200">
         <div className="grid gap-3">
-          {/* <img src={Logo} alt="Logo" className="logo" /> */}
-          <FaTruckArrowRight size={25} />
+           <img src={Logo} alt="Logo" className="h-12 w-auto" />
           <p >Shipment is a global supplier transport and logistic solutions.</p>
           <a className={`${className}`} href={companyContact.phoneHref}>
             <FaPhone /> {companyContact.phone}

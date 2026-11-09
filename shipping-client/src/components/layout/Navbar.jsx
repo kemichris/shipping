@@ -8,6 +8,8 @@ import { Button } from "../common/Button";
 
 import { MobileMenu } from "./MobileMenu";
 
+import Logo from '../../assets/shipping_logo.png'
+
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -21,8 +23,8 @@ export function Navbar() {
   return (
     <>
       <nav className="fixed top-0 w-full bg-white flex items-center justify-between px-8 py-4 shadow-md z-1000">
-        {/* <img src={Logo} alt="Logo" className="logo" /> */}
-        <FaTruckArrowRight size={25} />
+        <img src={Logo} alt="Logo" className="h-12 w-auto" />
+     
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex gap-4 md:items-center ">

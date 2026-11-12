@@ -1,128 +1,80 @@
-# Shipping 🚚
+# SwiftShip Shipping Platform
 
-**A modern shipping and logistics platform designed to simplify shipment management and package tracking.**
+A shipment creation, administration, and package tracking application built with React, Express, and MongoDB.
 
-Shipping is a shipping and logistics application built to make shipment tracking and delivery information more accessible. It provides customers with a way to track shipments using unique tracking numbers and stay informed about their delivery progress.
+## Features
 
-## ✨ Features
+- Public shipment lookup with current status and a chronological tracking history.
+- Admin dashboard backed by database counts and recent shipments.
+- Shipment creation, search, filters, sorting, pagination, details, editing, and lifecycle updates.
+- Cancellation with tracking-history events; permanent deletion is limited to cancelled or returned shipments.
+- Optional Geoapify address autocomplete with international address fields and a manual-entry fallback.
+- Admin-only API operations protected by JWT authentication and role checks.
 
-- **Shipment Tracking:** Track packages using unique tracking numbers.
-- **Real-Time Shipment Information:** Retrieve shipment status and available delivery updates.
-- **Delivery Estimates:** View estimated delivery dates.
-- **Shipment Status:** Access information about the current state of a shipment.
-- **AI-Powered Customer Support:** Integration with an AI assistant that answers shipping-related questions and retrieves shipment information.
-
-## 🛠️ Tech Stack
-
-Update this section to reflect the actual technologies used in the main application.
-
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB
-- **Frontend:** React
-- **Styling:** Tailwind
-- **Deployment:** vercel
-
-## 📁 Project Structure
+## Project layout
 
 ```text
-Shipping/
-├── controllers/
-├── models/
-├── routes/
-├── services/
-├── middleware/
-├── config/
-├── utils/
-├── server.js
-└── package.json
+shipping-client/   React 19, Vite, Tailwind CSS, React Router
+shipping-server/   Express API, Mongoose models, Zod validation
 ```
 
-*Adjust the structure to match the actual repository.*
+## Run locally
 
-## ⚙️ Getting Started
+Prerequisites: Node.js, npm, and a MongoDB instance.
 
-### Prerequisites
-
-- Node.js
-- npm
-- MongoDB
-
-### Installation
-
-1. Clone the repository:
+1. Configure the API:
 
 ```bash
-git clone <repository-url>
-```
-
-2. Navigate into the project directory:
-
-```bash
-cd Shipping
-```
-
-3. Install dependencies:
-
-```bash
+cd shipping-server
 npm install
+cp .env.example .env
 ```
 
-4. Configure environment variables by creating a `.env` file:
+Set `MONGO_URI` and a private `JWT_SECRET` in `shipping-server/.env`. `GEOAPIFY_API_KEY` is optional. Keep it in the server environment only; do not add a `VITE_` prefix. Without it, admins can still enter addresses manually.
 
-```env
-PORT=8000
-MONGO_URI=your_mongodb_connection_string
-```
-
-5. Start the development server:
+2. Start the API in one terminal:
 
 ```bash
 npm run dev
 ```
 
-## 🔍 Shipment Tracking
+3. Configure and start the client in a second terminal:
 
-Customers can retrieve shipment information by providing their unique tracking number.
+```bash
+cd shipping-client
+npm install
+cp .env.example .env
+npm run dev
+```
 
-The tracking system provides information such as:
+Public registration creates ordinary `user` accounts. To create an administrator locally, seed a user with the `admin` role in your development database. The API independently verifies this role for every admin operation.
 
-- Current shipment status
-- Shipment location
-- Estimated delivery date
+## Address autocomplete
 
-## 🤖 AI Integration
+The server proxies address autocomplete through Geoapify so the key stays out of the browser bundle. Suggestions include the formatted address, street, city, state, country, postal code, and coordinates when the provider has them. Selected address details are persisted with the shipment. The form is debounced and keeps manual entry available when the key or provider is unavailable.
 
-Shipping also incorporates an AI-powered customer support system designed to improve the customer experience.
+## Shipment lifecycle
 
-The AI integration supports:
+Shipment status values are `pending`, `pending_payment`, `confirmed`, `picked_up`, `processing`, `in_transit`, `out_for_delivery`, `delivered`, `failed_delivery`, `returned`, and `cancelled`. The server validates allowed transitions and appends each update to tracking history with its previous status, new status, timestamp, message, and location.
 
-- Natural-language customer inquiries.
-- Retrieval of relevant shipping policies and documentation.
-- Shipment status lookup through tool calling.
-- Context-aware conversations.
+Customer tracking responses omit sender and recipient names, contact information, and street-level addresses. Route coordinates are rounded before they are returned publicly.
 
-## 🔐 Environment Variables
+## Environment variables
 
-| Variable | Description |
-|---|---|
-| `PORT` | Application server port |
-| `MONGO_URI` | MongoDB connection string |
+| Variable | App | Purpose |
+|---|---|---|
+| `PORT` | Server | Express listen port |
+| `MONGO_URI` | Server | MongoDB connection string |
+| `JWT_SECRET` | Server | Private JWT signing secret |
+| `JWT_EXPIRES_IN` | Server | Access token expiry, such as `1d` |
+| `GEOAPIFY_API_KEY` | Server | Optional private address autocomplete key |
+| `VITE_API_URL` | Client | API base URL, such as `http://localhost:8000/api` |
 
-## 🚀 Future Improvements
+## Tests
 
-- Enhanced shipment management.
-- Improved delivery visibility.
-- Expanded customer support capabilities.
-- Additional logistics automation.
+Run the server validation, status lifecycle, schema, and authorization tests with:
 
-## 👨‍💻 Author
-
-**Ekemini Christopher**
-
-GitHub: [Your GitHub Profile](https://github.com/kemichris)
-
-Portfolio: [kemichris.online](https://kemichris.online)
-
----
-
-*Shipping — Making shipping and delivery information simpler and more accessible.*
+```bash
+cd shipping-server
+npm test
+```

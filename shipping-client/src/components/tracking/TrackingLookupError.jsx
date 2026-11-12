@@ -1,0 +1,5 @@
+import { Link } from "react-router-dom";
+
+export function TrackingLookupError({ onRetry }) {
+  return <main className="mx-auto flex min-h-[65vh] max-w-3xl items-center px-5 py-20 sm:px-8"><section className="w-full rounded-2xl border border-amber-200 bg-white p-8 text-center shadow-sm sm:p-12"><p className="text-sm font-semibold uppercase tracking-wider text-amber-700">Tracking temporarily unavailable</p><h1 className="mt-2 text-2xl font-bold text-slate-900">We couldn’t load shipment updates</h1><p className="mx-auto mt-3 max-w-xl text-slate-600">Please try again in a moment. Your tracking number has not been changed.</p><div className="mt-7 flex flex-wrap justify-center gap-3"><button onClick={onRetry} type="button" className="rounded-lg bg-primary-light px-5 py-3 font-semibold text-white hover:bg-primary-dark">Try again</button><Link to="/tracking" className="rounded-lg border border-slate-200 px-5 py-3 font-semibold text-slate-700">Enter another number</Link></div></section></main>;
+}

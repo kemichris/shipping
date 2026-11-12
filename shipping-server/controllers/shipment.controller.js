@@ -20,7 +20,7 @@ export const createShipment = async (req, res, next) => {
 export const updateShipment = async (req, res, next) => {
     try {
         const { id } = req.params
-        const shipment = await shipmentServices.updateShipment(id, req.body)
+        const shipment = await shipmentServices.updateShipment(id, req.body, req.user._id)
 
         return res.status(200).json({
             success: true,

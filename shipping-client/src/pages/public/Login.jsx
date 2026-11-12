@@ -40,7 +40,6 @@ export function Login() {
     try {
       const res = await login(formData);
 
-      console.log(res);
 
       const token = res?.data?.accessToken;
       const role = res?.data?.user?.role;
@@ -58,9 +57,6 @@ export function Login() {
 
       navigate("/admin");
     } catch (error) {
-      console.log(error);
-      console.log(error.response?.data);
-
       const status = error.response?.status;
       const message = error.response?.data?.message;
 

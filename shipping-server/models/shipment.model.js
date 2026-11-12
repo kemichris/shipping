@@ -60,13 +60,17 @@ const shipmentSchema = new mongoose.Schema(
     status: {
       type: String,
       enum: [
+        "pending",
         "pending_payment",
+        "confirmed",
         "picked_up",
+        "processing",
         "in_transit",
         "out_for_delivery",
         "delivered",
-        "cancelled",
+        "failed_delivery",
         "returned",
+        "cancelled",
       ],
       default: "pending",
       index: true,
@@ -83,20 +87,22 @@ const shipmentSchema = new mongoose.Schema(
 
       coordinates: {
         type: [Number],
+        default: [],
       },
 
       updatedAt: Date,
     },
 
     estimatedDeliveryDate: Date,
-
     deliveredAt: Date,
 
     trackingEvents: [
       {
+        previousStatus: { type: String, default: null },
         status: {
           type: String,
           required: true,
+          enum: ["pending", "pending_payment", "confirmed", "picked_up", "processing", "in_transit", "out_for_delivery", "delivered", "failed_delivery", "returned", "cancelled"],
         },
 
         message: {
@@ -111,7 +117,7 @@ const shipmentSchema = new mongoose.Schema(
           },
           coordinates: {
             type: [Number],
-            required: true,
+            default: [],
           },
         },
 
@@ -129,6 +135,7 @@ const shipmentSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
+    optimisticConcurrency: true,
   },
 );
 

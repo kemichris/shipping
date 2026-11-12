@@ -28,6 +28,9 @@ export const protect = async (req, res, next) => {
         next();
 
     } catch (error) {
+        if (error.name === "JsonWebTokenError" || error.name === "TokenExpiredError") {
+            return next(new ApiError(401, "Your session is invalid or expired."));
+        }
         next(error);
     }
 };
@@ -41,7 +44,8 @@ export const authorize = (role) => {
             );
         }
 
-        if (!role.includes(req.user.role)) {
+        const allowedRoles = Array.isArray(role) ? role : [role];
+        if (!allowedRoles.includes(req.user.role)) {
             return next(
                 new ApiError(
                     403,

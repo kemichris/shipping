@@ -1,16 +1,16 @@
 const errorHandler = (err, req, res, next) => {
-    console.error('❌ ERROR');
-    console.error('Method:', req.method);
-    console.error('URL:', req.originalUrl);
-    console.error('Message:', err.message);
-    console.error('Stack:', err.stack);
-
-    const statusCode = err.statusCode || 500;
-
+    if (res.headersSent) return next(err);
+    const statusCode = err.statusCode
+        || (err.name === "ValidationError" || err.name === "CastError" ? 400 : null)
+        || (err.name === "VersionError" ? 409 : null)
+        || (err.code === 11000 ? 409 : 500);
+    if (statusCode >= 500) {
+        console.error("API error", { method: req.method, path: req.path, message: err.message });
+    }
     res.status(statusCode).json({
         success: false,
-        message: err.message || 'Internal Server Error',
-        errors: err.errors || []
+        message: statusCode === 500 ? "An unexpected server error occurred." : (err.message || "Request failed."),
+        errors: err.errors || [],
     });
 };
 

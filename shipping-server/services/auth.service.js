@@ -33,7 +33,14 @@ export const register = async (userData) => {
         password: hashedPassword,
     });
 
-    return user;
+    return {
+        id: user._id,
+        fullName: user.fullName,
+        username: user.userName,
+        email: user.email,
+        role: user.role,
+        createdAt: user.createdAt,
+    };
 };
 
 // user login service
@@ -82,7 +89,7 @@ export const login = async (userData) => {
         user: {
             id: user._id,
             fullName: user.fullName,
-            username: user.username,
+            username: user.userName,
             email: user.email,
             role: user.role
         },

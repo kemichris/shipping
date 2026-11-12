@@ -1,5 +1,5 @@
 
-import { sidebarData } from "./sidebardata";
+import { sidebarData } from "./sidebarData";
 import { SidebarItem } from "./SidebarItem";
 
 import Logo from "../../assets/shiplogo.png";

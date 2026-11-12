@@ -2,7 +2,7 @@
 import { sidebarData } from "./sidebarData";
 import { SidebarItem } from "./SidebarItem";
 
-import Logo from "../../assets/shiplogo.png";
+import Logo from "../../assets/shipping_logo.png";
 
 export function Sidebar({ sidebarOpen, setSidebarOpen }) {
     return (

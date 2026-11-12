@@ -68,7 +68,7 @@ Customer tracking responses omit sender and recipient names, contact information
 | `JWT_SECRET` | Server | Private JWT signing secret |
 | `JWT_EXPIRES_IN` | Server | Access token expiry, such as `1d` |
 | `GEOAPIFY_API_KEY` | Server | Optional private address autocomplete key |
-| `VITE_API_URL` | Client | API base URL, such as `http://localhost:8000/api` |
+| `API_URL` | Client | API base URL, such as `http://localhost:8000/api` |
 
 ## Tests
 
